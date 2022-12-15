@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: env-print
+spec:
+  containers:
+  - name: env-pod-container-envprint
+    image: iamraj007/printenv
+    args: ["TEST_SECRET"]
+    env:
+    - name: TEST_SECRET
+      value: "az-vault-secret@azurekeyvault" # ref to akvs we created before
+
